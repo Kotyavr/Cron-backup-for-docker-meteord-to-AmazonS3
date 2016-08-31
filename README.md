@@ -8,7 +8,7 @@ Install
 3)Use: s3cmd --configure , for cooperate you're server with amazon s3 service
 4)Go to configure scripts (read comments)
 
-How is scripts work
+How does this scripts work
 
 For correct using scripts start them wis this sequence:
 backup_mongo or/and backup_uploads->backup_dump->uploads_restore or/and mongo_restore
