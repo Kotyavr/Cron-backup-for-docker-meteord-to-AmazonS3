@@ -18,6 +18,7 @@ then he'll say 'nothing to restore' and ends
 Script uploads_restore check image dir for exist and copyed data on it if no data(images) or dir isn't exist,
 script create it and restore there data from amazon s3, else it sas nothing to restore all is OK fnl show result of count files in dir
 
-PS: mongo_restore use one time for restore mongo and not need for cron task. Use it manual.
-if you have any problems send me a message in akariume@gmail.com
+PS: mongo_restore: using one time, only for restore mongodb do not use crontab for it, it may beak your app. Use it manualy, when deploy app or when youre db crashes.
+PSS: uploads_restore: created spetialy for crontab to check the app image dir. You can use it any time, this script can only deploy images from server to host and do it only if host don't pass script's test.
+If you have any problems send me a message in akariume@gmail.com
 Lang RU/UA/EN
