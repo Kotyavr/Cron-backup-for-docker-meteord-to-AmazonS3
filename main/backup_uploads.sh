@@ -35,11 +35,6 @@ checkdir
 cp -r $APP_DIR/$IMG_DIR_NAME/ $IMAGES_DUMP_DIR/$IMG_DIR_NAME/
 if [ -d $IMAGES_DUMP_DIR/$IMG_DIR_NAME/ ]; then
 	log "Origilan img folder copyed to temp dir \"$IMAGES_DUMP_DIR/$IMG_DIR_NAME\""
-	log "Synchronize dump to Aazon S3"
-	log "Copy start"
-	s3cmd --acl-private --bucket-location=EU --guess-mime-type --skip-existing --delete-removed sync $IMAGES_DUMP_DIR/$IMG_DIR_NAME/* $AMAZON_DIR/$IMG_DIR_NAME
-	log "Images synchronized with Aazon S3"
-	log "On Amazon S3 storaged the lastest dump f images for script\"uploads_restore.sh\""
 	else
 	log "Error folder not copyed, chexk original folder for exist or privileges"
 	fi
