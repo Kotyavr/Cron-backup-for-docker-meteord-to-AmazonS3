@@ -45,11 +45,6 @@ log "Mongo dumped"
 docker cp mongodb:$DOCKER_DUMP_DIR/$MONGODB_NAME/ $MONGO_DUMP_DIR/$MONGODB_NAME/
 if [ -d $MONGO_DUMP_DIR/$MONGODB_NAME ]; then
 	log "Mongo dump copyed to temp dir \"$MONGO_DUMP_DIR/$MONGODB_NAME\""
-	log "Synchronize dump to Aazon S3"
-	log "Copy start"
-	s3cmd --acl-private --bucket-location=EU --guess-mime-type --delete-removed sync $MONGO_DUMP_DIR/$MONGODB_NAME/ $AMAZON_DIR/$MONGODB_NAME
-	log "Mongobd synchronized with Aazon S3"
-	log "You have lastest version mongorestore on Aazon S3 for script \"mongo_restore.sh\""
 	else
 	log "Error folder not copyed, check original folder for exist"
 	fi
