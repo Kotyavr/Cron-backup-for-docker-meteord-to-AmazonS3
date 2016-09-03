@@ -33,11 +33,6 @@ checkdir
 cp -r $BACKUPS_DIR/.uploads/ $DUMP_DIR/.uploads/
 if [ -d $DUMP_DIR/.uploads/ ]; then
 	log "Origilan img folder copyed to temp dir \"$DUMP_DIR/$BACKUP_NAME\""
-	log "Synchronize dump to Aazon S3"
-	log "Copy start"
-	s3cmd --acl-private --bucket-location=EU --guess-mime-type --skip-existing --delete-removed sync $DUMP_DIR/.uploads/* s3://delicato.com.ua/uploadsrestore/
-	log "Images synchronized with Aazon S3"
-	log "On Amazon S3 storaged the lastest dump f images for script\"uploads_restore.sh\""
 	else
 	log "Error folder not copyed, chexk original folder for exist or privileges"
 	fi
